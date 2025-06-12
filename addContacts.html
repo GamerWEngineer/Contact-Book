@@ -26,6 +26,14 @@
 
         <script src="config.js"></script>
         <script>
+
+            // Submit the form to add a new contact
+            function submitForm(e) {
+                e.preventDefault(); // Prevent the default form submission
+
+                const formData = new FormData(document.querySelector('#addContactForm'));
+                formData.append('apiKey', apiKey); // Append the API key to the form data
+            }
         </script>
     </body>
 </html>

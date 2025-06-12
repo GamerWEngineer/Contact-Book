@@ -37,9 +37,9 @@
                 const formData = new FormData(document.querySelector('#addContactForm'));
                 formData.append('apiKey', apiKey); // Append the API key to the form data
 
-                fetch(rootPath + "controller/insert-contact", {   //submitting the form data to the server
+                fetch(rootPath + "controller/insert-contact/", {   //submitting the form data to the server
                     method: 'POST',
-                    headers: {'Accept': 'application/json, */*'},   // Accept header to format the response as JSON
+                    headers: {'Accept': 'application/json, *.*'},   // Accept header to format the response as JSON
                     body: formData
                 })
                 .then(function(response){

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Add Contacts</title>
+    </head>
+    <body>
+        <h2>Add Contacts</h2>
+        </br>
+        <div id="avatarPreview"></div>
+        <form id="addContactForm">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" readonly><br/>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" readonly><br/>
+            <label for="mobile">Mobile:</label>
+            <input type="text" id="mobile" name="mobile" readonly><br/>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" readonly><br/>
+            </br>
+            <label for="avatar" id="avatarLabel" hidden>Change avatar image</label><br/>
+            <input type="file" id="avatar" name="avatar" hidden></br>
+            </br>
+            <button type="submit" id="submitForm" hidden>Submit</button>
+        </form>
+        <br/></br>
+        <button id="homeLink" type="button">Back to Contacts</button>
+        <button id="editContact" type="button">Edit Contact</button>
+        <button id="deleteContact" type="button">Delete Contact</button>
+
+        <script src="config.js"></script>
+        <script>
+            var id = getID(); // Get the contact ID from the URL
+            console.log("Contact ID: " + id); // Log the contact ID for debugging
+            function getID() {
+                // Function to get the contact ID from the URL parameters
+                var url = window.location.href; // Get the current URL
+                var pos = url.search("=");  // Find the position of the '=' character
+                var id = url.slice(pos + 1); // Extract the ID from the URL
+                return id; // Return the extracted ID
+            }
+        </script>
+    </body>
+</html>

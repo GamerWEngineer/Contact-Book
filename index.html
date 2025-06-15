@@ -1,6 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
         <title></title>
     </head>
     <body onload="fetchContacts()">
@@ -29,11 +30,17 @@
 
             // Function to display the contacts in a table
             function displayOuput(data){
-                output = "<table>";
+                output = `<table>
+                    <tr>
+                        <th>Avatar</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>                    
+                `;
                 for (a in data){
                     output += `
                     <tr onclick="editContact(${data[a].id})">  
-                        <td><img src="${rootPath}controller/uploads/${data[a].avatar}" width="40"/></td>
+                        <td><img src="${rootPath}controller/uploads/${data[a].avatar}" width="35"/></td>
                         <td><h5>${data[a].firstname}</h5></td>
                         <td><h5>${data[a].lastname}</h5></td>
                     </tr>
@@ -50,6 +57,7 @@
             function editContact(id) {
                 window.open("editContact.html?id="+id, "_self"); // Redirect to the edit contact page
             }
+
         </script>
     </body>
 </html>

@@ -2,10 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="styleDel.css">
         <title>Add Contacts</title>
     </head>
     <body onload="fetchContact()">
-        <h2>Edit or View Contact</h2>
+        <h2>Edit/View Contact</h2>
         <br/>
         <div id="avatarPreview"></div>
         <form id="editContactForm">
@@ -18,7 +19,7 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" readonly><br/>
             <br/>
-            <label for="avatar" id="avatarLabel" hidden>Change avatar image</label><br/>
+            <label for="avatar" id="avatarLabel" hidden></label><br/>
             <input type="file" id="avatar" name="avatar" hidden><br/>
             <br/>
             <button type="submit" id="submitForm" hidden>Submit</button>
@@ -89,6 +90,7 @@
 
                 document.getElementById("avatar").hidden = false; // Show the avatar input field
                 document.getElementById("avatarLabel").hidden = false; // Show the avatar label
+                document.getElementById("avatarLabel").innerHTML = "Select a file"; // Set the label text
                 document.getElementById("submitForm").hidden = false; // Show the submit button
             }
 
